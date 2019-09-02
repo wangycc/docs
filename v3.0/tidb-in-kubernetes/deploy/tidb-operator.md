@@ -123,6 +123,7 @@ After `TidbCluster` custom resource type is created, install TiDB Operator in yo
     {{< copyable "shell-regular" >}}
 
     ```shell
+    kubectl create ns tidb-admin && \ 
     helm install pingcap/tidb-operator --name=tidb-operator --namespace=tidb-admin --version=<chart-version> -f /home/tidb/tidb-operator/values-tidb-operator.yaml && \
     kubectl get po -n tidb-admin -l app.kubernetes.io/name=tidb-operator
     ```
